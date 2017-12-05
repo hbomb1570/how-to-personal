@@ -1,0 +1,1 @@
+insert into users (user_name, email, auth_ID) values ($1,$2,$3) returning*
