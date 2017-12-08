@@ -77,4 +77,17 @@ app.get('/auth/logout', (req,res,next)=> {
     res.redirect('http://localhost:3000/#')
 })
 
+app.get('/api/techniques',(req,res,next)=>{
+    const db = app.get('db')
+    db.techniques().then(response => {
+        res.status(200).send(response)
+    })
+})
+
+app.get('/api/videos',(req,res,next)=>{
+    const db = app.get('db')
+    db.video().then(response =>{
+        res.status(200).send(response)
+    })
+})
 app.listen(process.env.SERVER_PORT, ()=> {console.log(`Server listening on port ${process.env.SERVER_PORT}`)})

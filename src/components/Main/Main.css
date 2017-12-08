@@ -1,5 +1,6 @@
 .bgVideo {
-    height:100vw;
+    height:100vh;
     width:100vw;
     z-index: -1;
+    object-fit: cover
 }
