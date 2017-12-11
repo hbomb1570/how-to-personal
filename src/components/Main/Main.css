@@ -15,15 +15,30 @@
     width:100vw;
     z-index: -1;
     object-fit: cover
+    
 }
-.imageWrapper {
+/* .imageWrapper {
     height:25vh;
     width:60vw;
     position:relative;
-}
+} */
 
-.bgImage {
-    height:25vh;
-    width: 60vw;
-    z-index: 1;
+
+.quote {
+    /* background-image: linear-gradient(
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    ),
+    url('../../Images/bg3.jpg');
+    object-fit: cover; */
+    position:absolute;
+    top:30vh;
+    right:20%;
+    height:40%;
+    width:60%;
+    font-size: 24px;
+    text-shadow:0 1px 0 black;
+    text-align: center;
+    color: white;
+
 }

@@ -6,6 +6,7 @@ const express = require('express')
     , passport = require('passport')
     , Auth0Strategy = require('passport-auth0')
     , massive = require('massive')
+    , axios = require('axios')
 
 const app = express();
 
@@ -97,4 +98,12 @@ app.get('/api/quotes', (req, res, next) => {
         res.status(200).send(response)
     })
 })
+
+app.post('/api/search', (req, res, next) => {
+    axios.get(`https://food2fork.com/api/search?key=${process.env.REACT_APP_F2F_APIKEY}&q=${req.body.search_input}`)
+        .then(response => {
+            res.status(200).send(response.data)
+        })
+})
+
 app.listen(process.env.SERVER_PORT, () => { console.log(`Server listening on port ${process.env.SERVER_PORT}`) })
