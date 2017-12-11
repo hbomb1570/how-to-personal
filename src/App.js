@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { HashRouter, Route } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import './App.css'
 import axios from 'axios'
-import Main from './components/Main/Main'
-import Techniques from './components/Techniques/Techniques'
+import router from './router'
+// import { Link } from 'react-router-dom';
 
 class App extends Component {
 
@@ -24,8 +24,8 @@ class App extends Component {
     return (
       <HashRouter>
         <div className="App">
-          <Route exact path='/' component={Main}></Route>
-          <Route path='/techniques' component={Techniques}></Route>
+         <nav>  </nav>
+          {router}
         </div>
       </HashRouter>
     );

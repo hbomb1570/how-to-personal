@@ -1,30 +1,28 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import { Card, CardHeader, CardMedia, CardText } from 'material-ui/Card';
+import axios from 'axios';
+import YouTube from 'react-youtube'
+import { Card, CardHeader, CardMedia } from 'material-ui/Card';
+import './Videos.css'
 
-
-export default class Techniques extends Component {
+export default class Videos extends Component {
     constructor() {
         super()
         this.state = {
-            techniques: [],
+            videos: [],
             expanded: false,
             expandedCard: undefined
         }
     }
-
-
     componentDidMount() {
-        axios.get('/api/techniques')
+        axios.get('/api/videos')
             .then(res => {
                 this.setState({
-                    techniques: res.data
+                    videos: res.data,
                 })
             })
     }
-
     render() {
-        const techniquesName = this.state.techniques.map((e, i, a) => {
+        const videosName = this.state.videos.map((e, i, a) => {
             return (
                 <Card key={i} expanded={this.state.expandedCard === i ? true : false} onClick={() => {
                     if (this.state.expandedCard === i) {
@@ -39,23 +37,21 @@ export default class Techniques extends Component {
                     }
                 }}>
                     <CardHeader
-                        title={e.tech_name}
+                        title={e.video_name}
                         actAsExpander={true}
                         showExpandableButton={true}
                     />
                     <CardMedia
                         expandable={true}>
-                        <img src={e.image} alt="" />
+                        <YouTube className='howTo' videoId={e.url} autoPlay='false' controls />
                     </CardMedia>
-                    <CardText expandable={true}>
-                        {e.tech_info}
-                    </CardText>
+
                 </Card>
             )
         })
         return (
             <div>
-                {techniquesName}
+                {videosName}
             </div>
         );
     }
