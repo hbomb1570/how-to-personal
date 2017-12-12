@@ -106,4 +106,19 @@ app.post('/api/search', (req, res, next) => {
         })
 })
 
+app.post('/api/favorites',(req,res,next)=>{
+    const db = app.get('db')
+    db.add_favorite().then(response => {
+        res.status(200).send(response)
+    })
+})
+
+app.delete('/api/favorites',(req,res,next)=>{
+    const db = app.get('db')
+    db.delete_favorite().then(response => {
+        res.status(200).send(response)
+    })
+})
+
+
 app.listen(process.env.SERVER_PORT, () => { console.log(`Server listening on port ${process.env.SERVER_PORT}`) })

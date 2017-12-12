@@ -32,7 +32,6 @@ export default class Search extends Component {
             this.setState({
                 search: res.data.recipes
             })
-
         })
     }
 
@@ -49,7 +48,7 @@ export default class Search extends Component {
                             title={e.title}
                             subtitle={e.publisher}
                         >
-                            <img src={e.image_url} alt='' />
+                           <a href={e.source_url}> <img src={e.image_url} alt='' /> </a>
                         </GridTile>
                     ))}
                 </GridList>
