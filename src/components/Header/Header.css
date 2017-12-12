@@ -1,0 +1,17 @@
+.main {
+    width:100vw;
+    height:15vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	align-items: flex-start;
+    align-content: center;
+    background-color: #8D6E63;
+}
+
+.logo {
+    width:45vw;
+    height:15vh;
+
+}

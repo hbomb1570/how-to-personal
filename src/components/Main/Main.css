@@ -32,11 +32,11 @@
     url('../../Images/bg3.jpg');
     object-fit: cover; */
     position:absolute;
-    top:30vh;
-    right:20%;
+    top:20%;
+    left:10%;
     height:40%;
-    width:60%;
-    font-size: 24px;
+    width:80%;
+    font-size: 30px;
     text-shadow:0 1px 0 black;
     text-align: center;
     color: white;

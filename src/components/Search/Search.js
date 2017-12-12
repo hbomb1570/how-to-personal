@@ -15,8 +15,8 @@ export default class Search extends Component {
                     justifyContent: 'space-around',
                 },
                 gridList: {
-                    width: 500,
-                    height: 450,
+                    width: '80vw',
+                    height: '60vh',
                     overflowY: 'auto',
                 },
             }
@@ -39,7 +39,7 @@ export default class Search extends Component {
         let searchDisplay = this.state.search ? (
             <div style={this.state.styles.root}>
                 <GridList
-                    cellHeight={180}
+                    cellHeight={120}
                     style={this.state.styles.gridList}
                 >
                     {this.state.search.map((e, i, a) => (
@@ -48,7 +48,7 @@ export default class Search extends Component {
                             title={e.title}
                             subtitle={e.publisher}
                         >
-                           <a href={e.source_url}> <img src={e.image_url} alt='' /> </a>
+                           <a href={e.source_url} target='_blank'> <img src={e.image_url} alt='' /> </a>
                         </GridTile>
                     ))}
                 </GridList>
@@ -57,9 +57,19 @@ export default class Search extends Component {
         return (
             < div >
                 {searchDisplay}
+                <div className='searchWrapper'>
                 <input className='searchInput' type='text' onChange={this.inputHandler.bind(this)} />
                 <button className='searchButton' onClick={() => { this.getRecipes() }}>Search</button>
+                </div>
             </div >
+            // <div>
+                
+            //     <form onSubmit={this.getRecipes}>
+            //     <input type='text' />
+            //     <button type='submit'>Search</button>
+            //     </form>
+            //     {searchDisplay}
+            // </div>
         )
     }
-}
+} 

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { Card, CardHeader, CardMedia, CardText } from 'material-ui/Card';
-
+import './Techniques.css'
 
 export default class Techniques extends Component {
     constructor() {

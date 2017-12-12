@@ -4,6 +4,7 @@ import Main from './components/Main/Main'
 import Videos from './components/Videos/Videos'
 import Techniques from './components/Techniques/Techniques'
 import Search from './components/Search/Search'
+import Pantry from './components/Pantry/Pantry'
 
 export default (
     <Switch>
@@ -11,5 +12,8 @@ export default (
         <Route path='/videos' component={Videos} />
         <Route path='/techniques' component={Techniques} />
         <Route path='/search' component={Search} />
+        <Route path='/pantry' component={Pantry} />
+        {/* <Route path='/favorites' component={Favorites} />
+        <Route path='/logout' component={Logout} /> */}
     </Switch>
 )
