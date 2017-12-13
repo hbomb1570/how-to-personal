@@ -8,7 +8,7 @@ export default class Techniques extends Component {
         super()
         this.state = {
             techniques: [],
-            expanded: false,
+            expanded: true,
             expandedCard: undefined
         }
     }
@@ -26,35 +26,42 @@ export default class Techniques extends Component {
     render() {
         const techniquesName = this.state.techniques.map((e, i, a) => {
             return (
-                <Card key={i} expanded={this.state.expandedCard === i ? true : false} onClick={() => {
-                    if (this.state.expandedCard === i) {
-                        this.setState({
-                            expandedCard: undefined
-                        })
-                    }
-                    else {
-                        this.setState({
-                            expandedCard: i
-                        })
-                    }
-                }}>
+                <Card key={i}
+                className='mainCard'
+                // expanded={this.state.expandedCard === i ? true : false} onClick={() => {
+                //     if (this.state.expandedCard === i) {
+                //         this.setState({
+                //             expandedCard: undefined
+                //         })
+                //     }
+                //     else {
+                //         this.setState({
+                //             expandedCard: i
+                //         })
+                //     }
+                // }}
+                >
                     <CardHeader
                         title={e.tech_name}
-                        actAsExpander={true}
-                        showExpandableButton={true}
+                        // actAsExpander={true}
+                        // showExpandableButton={true}
                     />
                     <CardMedia
-                        expandable={true}>
-                        <img src={e.image} alt="" />
+                        // expandable={true}
+                        >
+                        <img 
+                        className='cardImage' src={e.image} alt="" />
                     </CardMedia>
-                    <CardText expandable={true}>
+                    <CardText 
+                    // expandable={true}
+                    >
                         {e.tech_info}
                     </CardText>
                 </Card>
             )
         })
         return (
-            <div>
+            <div className='cardWrapper'>
                 {techniquesName}
             </div>
         );

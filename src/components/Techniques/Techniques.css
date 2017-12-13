@@ -1,0 +1,19 @@
+.mainCard {
+    width: 20vw;
+    height: 45vh;
+    margin-bottom:5vh;
+    overflow-y: auto;
+}
+
+.cardWrapper {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+}
+
+.cardImage{
+    width: 200px;
+    height: 180px;
+
+}

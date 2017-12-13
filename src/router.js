@@ -5,6 +5,7 @@ import Videos from './components/Videos/Videos'
 import Techniques from './components/Techniques/Techniques'
 import Search from './components/Search/Search'
 import Pantry from './components/Pantry/Pantry'
+import Favorite from './components/Favorites/Favorites'
 
 export default (
     <Switch>
@@ -15,5 +16,6 @@ export default (
         <Route path='/pantry' component={Pantry} />
         {/* <Route path='/favorites' component={Favorites} />
         <Route path='/logout' component={Logout} /> */}
+        <Route path='/favorites' component={Favorite} />
     </Switch>
 )

@@ -1,5 +1,7 @@
 table favorites (
-    id serial primary key,
     user_id integer not null references users(id),
-    recipe_id text references recipes(id)
+    recipe_id integer,
+    recipe_name text,
+    recipe_image text,
+    recipe_source text
 )

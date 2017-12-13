@@ -108,14 +108,23 @@ app.post('/api/search', (req, res, next) => {
 
 app.post('/api/favorites',(req,res,next)=>{
     const db = app.get('db')
-    db.add_favorite().then(response => {
+    const {user_id,recipe_id,recipe_name,recipe_image,recipe_source} = req.body
+    db.add_favorite(user_id,recipe_id,recipe_name,recipe_image,recipe_source).then(response => {
         res.status(200).send(response)
     })
 })
 
-app.delete('/api/favorites',(req,res,next)=>{
+app.delete('/api/favorites/:user_id/:recipe_id',(req,res,next)=>{
     const db = app.get('db')
-    db.delete_favorite().then(response => {
+    const {user_id,recipe_id} = req.params
+    db.delete_favorite([user_id,recipe_id]).then(response => {
+        res.status(200).send(response)
+    })
+})
+
+app.get('/api/favorites',(req,res,next)=>{
+    const db = app.get('db')
+    db.favorites([req.user.id]).then(response => {
         res.status(200).send(response)
     })
 })

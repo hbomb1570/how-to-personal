@@ -1,1 +1,1 @@
-insert into favorites (user_id, recipe_id) values ($1,$2)
+insert into favorites (user_id, recipe_id,recipe_name,recipe_image,recipe_source) values ($1,$2,$3,$4,$5)
