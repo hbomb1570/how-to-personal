@@ -28,14 +28,14 @@ export default class MenuBar extends React.Component {
         />
         <Drawer
           docked={false}
-          width={'50%'}
+          width={'33%'}
           open={this.state.open}
           onRequestChange={(open) => this.setState({ open })}
         >
           <Link to='/' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>Home</MenuItem></Link>
           <Link to='/search' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>Search</MenuItem></Link>
-          <Link to='/techniques' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>Techniques and Terms</MenuItem></Link>
-          <Link to='/videos' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>How-to Videos</MenuItem></Link>
+          <Link to='/techniques' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>Techniques</MenuItem></Link>
+          <Link to='/videos' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>Videos</MenuItem></Link>
           <Link to='/pantry' style={{ color: 'white' }}><MenuItem onClick={this.handleClose}>Pantry</MenuItem></Link>
            <Link to='/favorites' style={{color:'white'}}><MenuItem onClick={this.handleClose}>Favorites</MenuItem></Link>
           {/* <Link to='/logout' style={{color:'white'}}><MenuItem onClick={this.handleClose}>Logout</MenuItem></Link> */}

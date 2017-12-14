@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { HashRouter } from 'react-router-dom';
+import './reset.css'
 import './App.css'
 import axios from 'axios'
 import router from './router'

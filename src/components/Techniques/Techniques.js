@@ -9,7 +9,6 @@ export default class Techniques extends Component {
         this.state = {
             techniques: [],
             expanded: true,
-            expandedCard: undefined
         }
     }
 

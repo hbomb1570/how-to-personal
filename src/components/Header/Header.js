@@ -7,9 +7,9 @@ export default class Header extends Component {
     render(){
         return (
             <div className='main'>
-                <MenuBar/>
+                <MenuBar className='menuBar'/>
                 <img className='logo' src={logo} alt='' />
-                <a href='http://localhost:3005/auth/logout'><button>Logout</button></a>
+                <a href='http://localhost:3005/auth/logout'><button className='logout'>Logout</button></a>
             </div>
         )
     }
