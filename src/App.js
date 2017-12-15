@@ -5,8 +5,6 @@ import './App.css'
 import axios from 'axios'
 import router from './router'
 import Header from '../src/components/Header/Header'
-// import { Link } from 'react-router-dom';
-// import MenuBar from '../src/components/MenuBar/MenuBar'
 
 class App extends Component {
 

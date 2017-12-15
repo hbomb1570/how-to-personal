@@ -13,15 +13,19 @@
 	height:20px;
 	max-width: 50vw;
 	min-width: 15vw;
+	border-style: inset;
+	border-color:rgb(148, 109, 99);
 }
 
 .searchButton {
 	height: 25px;
 	margin-left: 10px;
+	border-style: outset;
+	border-color:rgb(148, 109, 99);
 }
 
 .emptySearch {
-	padding-top: 6vh;
+	padding-top: 17vh;
 	position:relative;
 	width: 100vw;
 	height: 70vh;
@@ -35,8 +39,8 @@
 
 .bgMessage {
 	position: absolute;
-	top: 36vh;
-	left: 5vw;
+	top: 42vh;
+	left: 11vw;
 	font-size: 30px;
     text-shadow:0 1px 0 black;
     text-align: center;

@@ -1,4 +1,42 @@
-.howTo {
-    height:200px;
-    width:230px;
+.vidWrapper {
+    height: 80vh;
+    width: 100vw;
+    padding-top: 16vh;
+    overflow-y: auto;
 }
+
+.vidCard {
+    width: 90vw;
+    height: 45vh;
+    margin-bottom:3vh;
+    margin-left: 5vw;
+    overflow-y: auto;
+    box-shadow: 8px 8px 4px grey !important;
+    border-style: outset !important;
+    border-color: rgb(148, 109, 99) !important;
+    border-width: 4px !important;
+    border-radius: 5px !important;
+}
+
+.ytb-cued-thumbnail {
+    height: 100%;
+    width: 100%;
+    padding-left: 13px;
+}
+
+.ytb-cued-thumbnail-image {
+    height:200px;
+    width: 300px;
+}
+
+
+.vidName {
+    text-transform: capitalize;
+    font-size: 26px !important;
+    font-weight: 750 !important;
+}
+
+/* .howTo {
+    height:200px;
+    width:200px;
+} */

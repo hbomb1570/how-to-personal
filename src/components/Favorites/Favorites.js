@@ -5,6 +5,8 @@ import Checkbox from 'material-ui/Checkbox'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
 import { connect } from 'react-redux';
 import { getUser } from '../../ducks/users'
+import favbg from '../../Images/favbg4.jpg'
+import './Favorites.css'
 
 class Favorite extends Component {
     constructor(props) {
@@ -88,10 +90,10 @@ class Favorite extends Component {
                     })}
                 </GridList>
             </div>
-        ) : null
+        ) : <div className='favoriteWrapper'> <img className='favImg' src={favbg} alt=''/> <h1 className='favMessage'> No Favorites <a href='#/search'>Go Find Some!</a></h1> </div>
         return (
             <div>
-                {this.state.noData ? <h1> No Favorites Go Find Some!</h1> : recipeDisplay}
+                {recipeDisplay}
             </div>
         )
     }

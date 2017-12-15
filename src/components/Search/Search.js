@@ -26,10 +26,10 @@ class Search extends Component {
                     justifyContent: 'space-around',
                 },
                 gridList: {
-                    width: '80vw',
-                    height: '60vh',
-                    // overflowY: 'auto',
-                    margin: '5vh 0 0 0'
+                    width: '90vw',
+                    height: '90vh',
+                    overflowY: 'auto',
+                    margin: '5vh 0 2vh 0'
                 }
             }
         }
@@ -70,7 +70,7 @@ class Search extends Component {
         let searchDisplay = this.state.search.length > 0 ? (
             <div style={this.state.styles.root}>
                 <GridList
-                    cellHeight={240}
+                    cellHeight={220}
                     style={this.state.styles.gridList}
                 >
                     {this.state.search.map((e, i, a) => (
@@ -89,7 +89,7 @@ class Search extends Component {
             </div>
         ) : <div className='emptySearch'>
                 <img className='bgSearch' src={sbg} alt='' />
-                <h2 className='bgMessage'> Go find something to cook! </h2> 
+                <h2 className='bgMessage'> Find something to cook! </h2> 
             </div>
         return (
             < div >

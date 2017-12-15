@@ -26,7 +26,7 @@ export default class MenuBar extends React.Component {
           icon={<ActionReorder />}
           onClick={this.handleToggle}
         />
-        <Drawer
+        <Drawer className='menuDrawer'
           docked={false}
           width={'33%'}
           open={this.state.open}

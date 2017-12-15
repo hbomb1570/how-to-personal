@@ -24,7 +24,7 @@ export default class Videos extends Component {
     render() {
         const videosName = this.state.videos.map((e, i, a) => {
             return (
-                <Card key={i} expanded={this.state.expandedCard === i ? true : false} onClick={() => {
+                <Card className='vidCard' key={i} expanded={this.state.expandedCard === i ? true : false} onClick={() => {
                     if (this.state.expandedCard === i) {
                         this.setState({
                             expandedCard: undefined
@@ -36,21 +36,17 @@ export default class Videos extends Component {
                         })
                     }
                 }}>
-                    <CardHeader
+                    <CardHeader className='vidName'
                         title={e.video_name}
-                        actAsExpander={true}
-                        showExpandableButton={true}
                     />
-                    <CardMedia
-                        expandable={true}>
+                    <CardMedia >
                         <YouTube className='howTo' videoId={e.url} autoPlay='false' controls />
                     </CardMedia>
-
                 </Card>
             )
         })
         return (
-            <div>
+            <div className='vidWrapper'>
                 {videosName}
             </div>
         );

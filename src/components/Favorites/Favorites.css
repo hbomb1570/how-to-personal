@@ -1,0 +1,22 @@
+.favoriteWrapper {
+    height:79vh;
+    width:100vw;
+    position:relative;
+    padding-top: 21vh
+    
+}
+
+.favImg {
+    height:90%;
+    width:100%;
+}
+
+.favMessage {
+    position:absolute;
+    font-size: 26px;
+    text-shadow:0 1px 0 black;
+    text-align: center;
+    color: white;
+    top: 45vh;
+    left: 10vw;
+}
