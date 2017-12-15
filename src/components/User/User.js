@@ -15,7 +15,7 @@ class User extends Component {
             this.props.user ?
                 <div className='info-container'>
                     <p>Username: {this.props.user.user_name}</p>
-                    <a href='http://localhost:3005/auth/logout'><button>Logout</button></a>
+                    <a href={process.env.REACT_APP_LOGIN}><button>Logout</button></a>
                 </div>
                 :
                 <div className='info-container'>

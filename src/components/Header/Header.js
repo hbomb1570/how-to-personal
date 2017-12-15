@@ -9,7 +9,7 @@ export default class Header extends Component {
             <div className='main'>
                 <MenuBar className='menuBar'/>
                 <img className='logo' src={logo} alt='' />
-                <a href='http://localhost:3005/auth/logout'><button className='logout'>Logout</button></a>
+                <a href={process.env.REACT_APP_LOGIN}><button className='logout'>Logout</button></a>
             </div>
         )
     }
