@@ -4,7 +4,7 @@
     display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
-    background: linear-gradient(to right, rgba(126, 92, 81,0.7), rgba(189, 162, 148, 0.2));
+    background: linear-gradient(to right, rgb(148, 109, 99), rgb(209, 182, 169));
     
 }
 
@@ -12,9 +12,23 @@
     width:auto;
     height:9vh;
     mix-blend-mode:multiply;
-    padding-top:1vh;
+    padding-top:2vh;
 }
 
 .menuBar {
     background: rgba(255,255,255,0.2)
+}
+
+.logout {
+    margin-top: 1vh;
+    box-sizing: border-box;
+    padding: 5px;
+    width: 100%;
+    max-width: 200px;
+    background:  rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+    color:black;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out;
 }

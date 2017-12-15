@@ -1,26 +1,13 @@
 import React, { Component } from 'react';
 import './Pantry.css'
-import { GridList, GridTile } from 'material-ui/GridList';
+import { Card, CardHeader, CardMedia, CardText } from 'material-ui/Card';
 import axios from 'axios'
-
 
 export default class Pantry extends Component {
     constructor() {
         super()
         this.state = {
-            spices: [],
-            styles: {
-                root: {
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-around',
-                },
-                gridList: {
-                    width: '80vw',
-                    height: '60vh',
-                    overflowY: 'auto',
-                },
-            }
+            spices: []
         }
     }
 
@@ -32,27 +19,27 @@ export default class Pantry extends Component {
                 })
             })
     }
-   
+
     render() {
-        let pantryDisplay = this.state.spices ? (
-            <div style={this.state.styles.root}>
-            <GridList
-                cellHeight={120}
-                style={this.state.styles.gridList}
-            >
-                {this.state.spices.map((e,i,a)=>(
-                    <GridTile
-                        key={i}
-                        title={e.spice_name}
+       
+        const pantryDisplay = this.state.spices.map((e, i, a) => {
+            return (
+                <Card className='pantryCard'key={i}
                     >
-                    <img src={e.spice_img} alt='' />
-                    </GridTile>
-                ))}
-            </GridList>
-        </div>
-        ) : null
+                    <CardHeader className='pantryTitle'
+                        title={e.spice_name} />
+                    <CardMedia className='spiceImage'>
+                        <img src={e.spice_img} alt='' />
+                    </CardMedia>
+                    <CardText className='pantryText'>
+                        {e.spice_desc} <br/>
+                        Flavor: {e.flavor} 
+                    </CardText>
+                </Card>
+            )
+        })
         return (
-            <div>
+            <div className='pantryWrapper'>
                 {pantryDisplay}
             </div>
         )

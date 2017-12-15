@@ -5,8 +5,43 @@
 	justify-content: center;
 	align-items: center;
 	align-content: stretch;
-    width:50vw;
-    height:40px;
+    width:100vw;
+    height:75px;
+}
+
+.searchInput {
+	height:20px;
+	max-width: 50vw;
+	min-width: 15vw;
+}
+
+.searchButton {
+	height: 25px;
+	margin-left: 10px;
+}
+
+.emptySearch {
+	padding-top: 6vh;
+	position:relative;
+	width: 100vw;
+	height: 70vh;
+}
+
+.bgSearch {
+	height: 100%;
+	width: 100%;
+	z-index: -1;
+}
+
+.bgMessage {
+	position: absolute;
+	top: 36vh;
+	left: 5vw;
+	font-size: 30px;
+    text-shadow:0 1px 0 black;
+    text-align: center;
+    color: white;
+
 }
 
 

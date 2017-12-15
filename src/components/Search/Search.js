@@ -4,20 +4,21 @@ import { GridList } from 'material-ui/GridList';
 import { connect } from 'react-redux';
 import { getUser } from '../../ducks/users'
 import Tile from './Tile'
-
 import Snackbar from 'material-ui/Snackbar'
+// import cuttingBoard from '../../Images/cuttingboard.jpg'
+import sbg from '../../Images/cb2.jpg'
+import './Search.css'
 
 class Search extends Component {
     constructor() {
         super()
         this.handleOpenSnack = this.handleOpenSnack.bind(this)
-        this.handleCheck = this.handleCheck.bind(this)
         this.state = {
             search_input: '',
             search: [],
             userInfo: {},
+            added: false,
             open: false,
-            checked: false,
             styles: {
                 root: {
                     display: 'flex',
@@ -48,20 +49,14 @@ class Search extends Component {
         })
     }
 
-    handleCheck = () => {
-        this.setState({
-            checked: !this.state.checked
-        })
-    }
-
-    handleOpenSnack = () => {
+    handleOpenSnack = (bool) => {
         this.setState({
             open: true,
+            added: bool
         })
     }
 
     handleRequestClose = () => {
-        console.log(this.state)
         this.setState({
             open: false,
         })
@@ -72,16 +67,14 @@ class Search extends Component {
     }
 
     render() {
-        let searchDisplay = this.state.search ? (
+        let searchDisplay = this.state.search.length > 0 ? (
             <div style={this.state.styles.root}>
                 <GridList
                     cellHeight={240}
                     style={this.state.styles.gridList}
                 >
-                    {this.state.search && this.state.search.map((e, i, a) => (
+                    {this.state.search.map((e, i, a) => (
                         <Tile
-                            checked={this.state.checked}
-                            handleCheck={this.handleCheck}
                             key={i}
                             recipe={e}
                             user={this.props.user}
@@ -90,11 +83,14 @@ class Search extends Component {
                 </GridList>
                 <Snackbar
                     open={this.state.open}
-                    message={this.state.checked === true ? `Recipe added to favorites.` : `Recipe removed from favorites.`}
+                    message={this.state.added ? `Recipe added to favorites.` : `Recipe removed from favorites.`}
                     autoHideDuration={2500}
                     onRequestClose={this.handleRequestClose} />
             </div>
-        ) : null
+        ) : <div className='emptySearch'>
+                <img className='bgSearch' src={sbg} alt='' />
+                <h2 className='bgMessage'> Go find something to cook! </h2> 
+            </div>
         return (
             < div >
                 {searchDisplay}
@@ -103,20 +99,14 @@ class Search extends Component {
                     <button className='searchButton' onClick={() => { this.getRecipes() }}>Search</button>
                 </div>
             </div >
-            // <div>
-            //     {searchDisplay}
-            //     <form onSubmit={this.getRecipes}>
-            //     <input type='text' onChange={this.inputHandler.bind(this)} />
-            //     <button type='submit'>Search</button>
-            //     </form>
-
-            // </div>
         )
     }
 }
+
 function mapStateToProps(state) {
     return {
         user: state.userData
     }
 }
+
 export default connect(mapStateToProps, { getUser })(Search)

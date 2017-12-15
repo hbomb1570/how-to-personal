@@ -12,7 +12,6 @@ export default class Techniques extends Component {
         }
     }
 
-
     componentDidMount() {
         axios.get('/api/techniques')
             .then(res => {
@@ -26,41 +25,23 @@ export default class Techniques extends Component {
         const techniquesName = this.state.techniques.map((e, i, a) => {
             return (
                 <Card key={i}
-                className='mainCard'
-                // expanded={this.state.expandedCard === i ? true : false} onClick={() => {
-                //     if (this.state.expandedCard === i) {
-                //         this.setState({
-                //             expandedCard: undefined
-                //         })
-                //     }
-                //     else {
-                //         this.setState({
-                //             expandedCard: i
-                //         })
-                //     }
-                // }}
+                    className='techCard'
                 >
-                    <CardHeader
+                    <CardHeader className='techTitle'
                         title={e.tech_name}
-                        // actAsExpander={true}
-                        // showExpandableButton={true}
                     />
-                    <CardMedia
-                        // expandable={true}
-                        >
+                    <CardMedia className='techImage'>
                         <img 
-                        className='cardImage' src={e.image} alt="" />
+                             src={e.image} alt="" />
                     </CardMedia>
-                    <CardText 
-                    // expandable={true}
-                    >
+                    <CardText>
                         {e.tech_info}
                     </CardText>
                 </Card>
             )
         })
         return (
-            <div className='cardWrapper'>
+            <div className='techWrapper'>
                 {techniquesName}
             </div>
         );

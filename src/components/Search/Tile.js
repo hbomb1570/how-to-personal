@@ -32,17 +32,21 @@ export default class Tile extends Component {
         }
     }
     handleCheck = () => {
-        if (this.props.checked === false) {
+        if (this.state.checked === false) {
             axios.post('/api/favorites', this.state.addRecipe)
                 .then(res => {
-                    this.props.handleCheck()
-                    this.props.open()
+                    this.setState({
+                    checked:!this.state.checked
+                    })
+                    this.props.open(this.state.checked)
                 })
         } else {
             axios.delete(`/api/favorites/${this.state.deleteRecipe.user_id}/${this.state.deleteRecipe.recipe_id}`)
                 .then(res => {
-                    this.props.open()
-                    this.props.handleCheck()
+                    this.setState({
+                        checked:!this.state.checked
+                    })
+                    this.props.open(this.state.checked)
                 })
         }
     }

@@ -3,7 +3,6 @@ import axios from 'axios'
 import { GridList, GridTile } from 'material-ui/GridList'
 import Checkbox from 'material-ui/Checkbox'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
 import { connect } from 'react-redux';
 import { getUser } from '../../ducks/users'
 
@@ -16,8 +15,7 @@ class Favorite extends Component {
             recipeDisplay: undefined,
             noData: false,
             deleteRecipe: {
-                user_id: props.user.id,
-                recipe_id: props.recipe_id
+                user_id: props.user.id
             },
             styles: {
                 block: {
@@ -34,7 +32,6 @@ class Favorite extends Component {
                 gridList: {
                     width: '80vw',
                     height: '60vh',
-                    // overflowY: 'auto',
                     margin: '5vh 0 0 0'
                 }
             }
@@ -42,6 +39,10 @@ class Favorite extends Component {
     }
 
     componentDidMount() {
+        this.props.getUser()
+    }
+
+    componentWillReceiveProps(){
         axios.get('/api/favorites')
             .then(res => {
                 if (res.data.length > 0) {
@@ -57,7 +58,7 @@ class Favorite extends Component {
     }
 
     handleCheck(id) {
-        axios.delete(`/api/favorites/${this.state.deleteRecipe.user_id}/${this.state.deleteRecipe.recipe_id}`)
+        axios.delete(`/api/favorites/${this.props.user.id}/${id}`)
             .then(res => {
                 this.setState({
                     recipeDisplay: res.data
@@ -75,10 +76,9 @@ class Favorite extends Component {
                     {this.state.recipeDisplay.map((e, i, a) => {
                         return (
                             <GridTile
-                                checked={this.state.checked}
+                                
                                 key={i}
-                                actionIcon={<Checkbox onCheck={() => this.handleCheck(e.recipe_id)} checkedIcon={<ActionFavorite style={{ color: '#F44336' }} />}
-                                    uncheckedIcon={<ActionFavoriteBorder color='#F44336' />}
+                                actionIcon={<Checkbox checked={true} onCheck={() => this.handleCheck(e.recipe_id)} checkedIcon={<ActionFavorite style={{ color: '#F44336' }} />}
                                     style={this.state.styles.checkbox} />}
                                 title={e.recipe_name}
                                 subtitle={<a href={e.recipe_source} target='_blank'>{e.recipe_source}</a>}

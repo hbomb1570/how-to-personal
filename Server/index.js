@@ -109,9 +109,18 @@ app.post('/api/search', (req, res, next) => {
 app.post('/api/favorites',(req,res,next)=>{
     const db = app.get('db')
     const {user_id,recipe_id,recipe_name,recipe_image,recipe_source} = req.body
-    db.add_favorite(user_id,recipe_id,recipe_name,recipe_image,recipe_source).then(response => {
-        res.status(200).send(response)
+    db.favorites(user_id).then(response =>{
+        if (response.filter( x => {
+            return x.recipe_id === recipe_id
+        })[0]){
+            res.end()
+            return
+        }
+        db.add_favorite(user_id,recipe_id,recipe_name,recipe_image,recipe_source).then(response => {
+            res.status(200).send(response)
+        })
     })
+
 })
 
 app.delete('/api/favorites/:user_id/:recipe_id',(req,res,next)=>{
