@@ -23,6 +23,8 @@ app.use(session({
     saveUninitialized: true
 }))
 
+app.use(express.static(__dirname+ '/../build'))
+
 app.use(passport.initialize());
 app.use(passport.session());
 
