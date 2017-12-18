@@ -29,7 +29,7 @@ export default class Tile extends Component {
                 },
                 checkbox: {
                     marginBottom: 16,
-                    backgroundColor: red500
+                    fill: red500
                 }
             }
         }
