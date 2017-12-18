@@ -39,7 +39,7 @@ export default class Videos extends Component {
                     <CardHeader className='vidName'
                         title={e.video_name}
                     />
-                    <CardMedia >
+                    <CardMedia className='vidMedia' >
                         <YouTube className='howTo' videoId={e.url} autoPlay='false' controls />
                     </CardMedia>
                 </Card>

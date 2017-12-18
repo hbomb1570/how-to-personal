@@ -14,7 +14,7 @@ class Favorite extends Component {
         this.handleCheck = this.handleCheck.bind(this)
         this.state = {
             checked: true,
-            recipeDisplay: undefined,
+            recipeDisplay: [],
             noData: false,
             deleteRecipe: {
                 user_id: props.user.id
@@ -69,7 +69,7 @@ class Favorite extends Component {
     }
 
     render() {
-        let recipeDisplay = this.state.recipeDisplay ? (
+        let recipeDisplay = this.state.recipeDisplay[0] ? (
             <div style={this.state.styles.root} >
                 <GridList
                     cellHeight={240}

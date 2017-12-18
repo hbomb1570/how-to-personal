@@ -21,19 +21,19 @@ export default class Pantry extends Component {
     }
 
     render() {
-       
+
         const pantryDisplay = this.state.spices.map((e, i, a) => {
             return (
-                <Card className='pantryCard'key={i}
-                    >
+                <Card className='pantryCard' key={i}
+                >
                     <CardHeader className='pantryTitle'
                         title={e.spice_name} />
                     <CardMedia className='spiceImage'>
                         <img src={e.spice_img} alt='' />
                     </CardMedia>
                     <CardText className='pantryText'>
-                        {e.spice_desc} <br/>
-                        Flavor: {e.flavor} 
+                        {e.spice_desc} <br />
+                        Flavor: {e.flavor}
                     </CardText>
                 </Card>
             )

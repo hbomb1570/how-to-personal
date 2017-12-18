@@ -30,11 +30,11 @@ export default class Techniques extends Component {
                     <CardHeader className='techTitle'
                         title={e.tech_name}
                     />
-                    <CardMedia className='techImage'>
-                        <img 
-                             src={e.image} alt="" />
+                    <CardMedia className='techImageWrapper'>
+                        <img className='techImage'
+                            src={e.image} alt="" />
                     </CardMedia>
-                    <CardText>
+                    <CardText className='techText'>
                         {e.tech_info}
                     </CardText>
                 </Card>

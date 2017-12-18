@@ -28,7 +28,7 @@ export default class MenuBar extends React.Component {
         />
         <Drawer className='menuDrawer'
           docked={false}
-          width={'33%'}
+          width={150}
           open={this.state.open}
           onRequestChange={(open) => this.setState({ open })}
         >

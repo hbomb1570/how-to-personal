@@ -1,8 +1,8 @@
 .mainWrapper {
-    /* margin-top: 11vh; */
     height: 100%;
     width: 100%;
     position: relative;
+    background: black;
     border: none;
     margin: none;
 }
@@ -19,12 +19,13 @@
 
 .quote {
     position:absolute;
-    top:38%;
-    left:10%;
-    height:40%;
-    width:80%;
+    top:35%;
+    left:5%;
+    height:60%;
+    width:90%;
     font-size: 30px;
-    text-shadow:0 1px 0 black;
+    font-weight: 550;
+    text-shadow:3px 2px 3px black;
     text-align: center;
     color: white;
 }

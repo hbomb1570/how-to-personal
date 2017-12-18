@@ -2,13 +2,13 @@
     display:flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    margin: 0 0 3vh 0;
-    padding-top: 14vh;
+    margin: 0 0 2vh 0;
+    padding-top: 16vh;
 }
 
 .pantryCard {
     width: 45vw;
-    height: 45vh;
+    height: 40vh;
     margin-bottom:3vh;
     overflow-y: auto;
     box-shadow: 8px 8px 4px grey !important;
@@ -18,6 +18,29 @@
     border-radius: 5px !important;
 }
 
+@media screen and (orientation: landscape) and (min-width: 600px)  {
+    .pantryCard {
+        width: 30vw;
+        height: 80vh;
+        margin: 3vh 0 3vh 0;
+    };
+}
+
+@media screen and (min-width: 800px) {
+    .pantryCard {
+        width: 22vw;
+        height: 40vh;
+        margin: 3vh 0 3vh 0;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .pantryCard {
+        width: 17vw;
+        height: 45vh;
+        margin: 2vh 0 2vh 0;
+    }
+}
 .spiceImage {
     width: 65% ;
     height: 25% ;
@@ -25,10 +48,23 @@
     margin-left: auto;
     margin-right: auto;
     border: none;
+    margin-top: 5vh;
+}
+@media screen and (min-width: 600px ) {
+    .spiceImage {
+        height: 35%;
+    }
 }
 
 .pantryTitle {
     text-transform: capitalize;
     font-size: 26px !important;
     font-weight: 750 !important;
+    height: 6vh;
+}
+
+.pantryText {
+    margin-top: 3vh;
+    height: 10vh;
+    overflow-y: auto;
 }

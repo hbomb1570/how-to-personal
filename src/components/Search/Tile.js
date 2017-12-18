@@ -4,6 +4,7 @@ import { GridTile } from 'material-ui/GridList'
 import Checkbox from 'material-ui/Checkbox'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
+import './Tile.css'
 
 export default class Tile extends Component {
     constructor(props) {
@@ -52,10 +53,10 @@ export default class Tile extends Component {
     }
     render() {
         return (
-            <GridTile className='searchTile'
+            <GridTile
                 actionIcon={<Checkbox onCheck={this.handleCheck}
-                    checkedIcon={<ActionFavorite style={{ color: '#F44336' }} />}
-                    uncheckedIcon={<ActionFavoriteBorder color='#F44336' />}
+                    checkedIcon  ={<ActionFavorite  />}
+                    uncheckedIcon={<ActionFavoriteBorder  />}
                     style={this.state.styles.checkbox} />}
                 title={this.props.recipe.title}
                 subtitle={<a href={this.props.recipe.source_url} target='_blank'> {this.props.recipe.source_url}</a>}

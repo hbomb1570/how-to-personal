@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getUser } from '../../ducks/users'
 import Tile from './Tile'
 import Snackbar from 'material-ui/Snackbar'
-// import cuttingBoard from '../../Images/cuttingboard.jpg'
 import sbg from '../../Images/cb2.jpg'
 import './Search.css'
 
@@ -21,15 +20,18 @@ class Search extends Component {
             open: false,
             styles: {
                 root: {
+                    height: '100vh',
+                    width: '100vw',
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'space-around',
                 },
                 gridList: {
                     width: '90vw',
-                    height: '90vh',
+                    height: '82vh',
                     overflowY: 'auto',
-                    margin: '5vh 0 2vh 0'
+                    margin: '0 0 2vh 0',
+                    padding: '21vh 0 4vh 0'
                 }
             }
         }
@@ -39,12 +41,14 @@ class Search extends Component {
         this.setState({ search_input: e.target.value })
     }
 
-    getRecipes() {
+    getRecipes(event) {
         // set e as the input above
-        // e.preventDefault()
+        console.log(event)
+        event.preventDefault()
         axios.post('/api/search', { search_input: this.state.search_input }).then(res => {
             this.setState({
-                search: res.data.recipes
+                search: res.data.recipes,
+                search_input:''
             })
         })
     }
@@ -81,7 +85,7 @@ class Search extends Component {
                             open={this.handleOpenSnack} />
                     ))}
                 </GridList>
-                <Snackbar
+                <Snackbar className='snackbar'
                     open={this.state.open}
                     message={this.state.added ? `Recipe added to favorites.` : `Recipe removed from favorites.`}
                     autoHideDuration={2500}
@@ -93,11 +97,14 @@ class Search extends Component {
             </div>
         return (
             < div >
-                {searchDisplay}
-                <div className='searchWrapper'>
-                    <input className='searchInput' type='text' onChange={this.inputHandler.bind(this)} />
-                    <button className='searchButton' onClick={() => { this.getRecipes() }}>Search</button>
+            <div className='searchWrapper'>
+                    <form onSubmit={(event) => {this.getRecipes(event)}}>
+                        <input className='searchInput' type='text' onChange={this.inputHandler.bind     (this)} value={this.state.search_input}/>
+                            <button className='searchButton'>Search</button>
+                    </form>
                 </div>
+             {searchDisplay}
+                
             </div >
         )
     }
