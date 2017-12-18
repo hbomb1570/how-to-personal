@@ -34,7 +34,7 @@ class Favorite extends Component {
                 gridList: {
                     width: '80vw',
                     height: '60vh',
-                    margin: '5vh 0 0 0'
+                    margin: '19vh 0 3vh 0'
                 }
             }
         }
