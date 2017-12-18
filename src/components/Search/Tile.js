@@ -5,6 +5,7 @@ import Checkbox from 'material-ui/Checkbox'
 import ActionFavorite from 'material-ui/svg-icons/action/favorite'
 import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border'
 import './Tile.css'
+import { red500 } from 'material-ui/styles/colors'
 
 export default class Tile extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ export default class Tile extends Component {
                 },
                 checkbox: {
                     marginBottom: 16,
+                    backgroundColor: red500
                 }
             }
         }
