@@ -11,6 +11,7 @@ import './Search.css'
 class Search extends Component {
     constructor() {
         super()
+        this.inputHandler = this.inputHandler.bind(this)
         this.handleOpenSnack = this.handleOpenSnack.bind(this)
         this.state = {
             search_input: '',
@@ -99,7 +100,7 @@ class Search extends Component {
             < div >
             <div className='searchWrapper'>
                     <form onSubmit={(event) => {this.getRecipes(event)}}>
-                        <input className='searchInput' type='text' onChange={this.inputHandler.bind     (this)} value={this.state.search_input}/>
+                        <input className='searchInput' type='text' onChange={this.inputHandler} value={this.state.search_input}/>
                             <button className='searchButton'>Search</button>
                     </form>
                 </div>

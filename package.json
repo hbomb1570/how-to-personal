@@ -31,8 +31,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "server":"nodemon --watch server"
+    "server": "nodemon --watch server"
   },
   "proxy": "http://localhost:3005/",
-  "main": "Server/index.js"
+  "main": "server/index.js"
 }
