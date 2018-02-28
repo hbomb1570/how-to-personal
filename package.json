@@ -34,5 +34,5 @@
     "server": "nodemon --watch server"
   },
   "proxy": "http://localhost:3005/",
-  "main": "server/index.js"
+  "main": "Server/index.js"
 }
