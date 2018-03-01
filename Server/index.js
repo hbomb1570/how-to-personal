@@ -77,7 +77,7 @@ app.get('/auth/me', (req, res, next) => {
 
 app.get('/auth/logout', (req, res, next) => {
     req.logout()
-    res.redirect(process.env.REACT_APP_LOGIN)
+    res.redirect(`https://hbomb1570.auth0.com/v2/logout?returnTo=${process.env.REACT_APP_MAIN}`)
 })
 
 app.get('/api/techniques', (req, res, next) => {
