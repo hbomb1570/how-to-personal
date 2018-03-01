@@ -8,19 +8,19 @@ import Header from '../src/components/Header/Header'
 
 class App extends Component {
 
-  // componentWillMount() {
-  //   axios.get('/auth/me')
-  //     .then(userInfo => {
-  //       if (userInfo) {
-  //         window.location.replace(process.env.REACT_APP_MAIN)
-  //       }
-  //     })
-  //     .catch(error => {
-  //       if (error) {
-  //         window.location.replace(process.env.REACT_APP_LOGIN)
-  //       }
-  //     })
-  // }
+  componentWillMount() {
+    axios.get('/auth/me')
+      .then(userInfo => {
+        if (userInfo) {
+          window.location.replace(process.env.REACT_APP_MAIN)
+        }
+      })
+      .catch(error => {
+        if (error) {
+          window.location.replace(process.env.REACT_APP_LOGIN)
+        }
+      })
+  }
   render() {
     return (
       <HashRouter>
