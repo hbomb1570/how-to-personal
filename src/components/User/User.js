@@ -12,7 +12,7 @@ class User extends Component {
 
     render() {
         const loginJSX = (
-            this.props.user ?
+            this.props.user.user_name ?
                 <div className='info-container'>
                     <p>Username: {this.props.user.user_name}</p>
                     <a href={process.env.REACT_APP_LOGIN}><button>Logout</button></a>
